@@ -29,7 +29,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+TEST = 'this this'
 # Application definition
 
 INSTALLED_APPS = (
@@ -39,9 +39,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'south',
+
     'home',
     'api',
-    'rest_framework'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,11 +66,14 @@ WSGI_APPLICATION = 'gettingstarted.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'NAME': 'your_heroku_db_name',                     
+        'USER': 'your_heroku_db_user_name',
+        'PASSWORD': 'your_heroku_password',
+        'HOST': 'ec2-23-21-133-106.compute-1.amazonaws.com', # Or something like this
+        'PORT': '5432',                     
     }
 }
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -105,3 +111,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

@@ -1,12 +1,23 @@
-from django.conf.urls import patterns, include, url
+from rest_framework.urlpatterns import format_suffix_patterns
 
-admin.autodiscover()
+from django.conf.urls import patterns, url, include
+from django.views.decorators.cache import cache_page
 
-import api.views
+from api.views import KeywordViewSet
 
-urlpatterns = patterns('',
-    url(r'^', include('api.urls')),
-    url(r'^db', home.views.db, name='db'),
-    url(r'^admin/', include(admin.site.urls)),
 
-)
+keyword_list = KeywordViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+keyword_detail = KeywordViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'delete': 'destroy'
+})
+
+urlpatterns = format_suffix_patterns([
+    # url(r'^$', api_root),
+    url(r'^keywords/$', keyword_list, name='keyword-list'),
+    url(r'^keywords/(?P<pk>[0-9]+)/$', keyword_detail, name='keyword-detail'),
+])
