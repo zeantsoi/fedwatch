@@ -67,10 +67,10 @@ WSGI_APPLICATION = 'gettingstarted.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-        'NAME': 'your_heroku_db_name',                     
-        'USER': 'your_heroku_db_user_name',
-        'PASSWORD': 'your_heroku_password',
-        'HOST': 'ec2-23-21-133-106.compute-1.amazonaws.com', # Or something like this
+        'NAME': 'd7oruu5c8tc5qt',                     
+        'USER': 'itrphyccdzzwts',
+        'PASSWORD': 'CsOh6bGR9gOr6diJ5mXBFo6GZH',
+        'HOST': 'ec2-107-22-182-206.compute-1.amazonaws.com', # Or something like this
         'PORT': '5432',                     
     }
 }
