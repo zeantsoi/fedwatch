@@ -120,127 +120,27 @@
                                 Office</th>
                             <th class="dt-body-right sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 31px;">
                                 Age</th>
-                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 74px;">
-                                Start date</th>
-                            <th class="dt-body-right sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 64px;">
-                                Salary</th>
                         </tr>
                     </thead>
 
                     <tfoot>
                         <tr>
                             <th rowspan="1" colspan="1">Name</th>
-                            <th rowspan="1" colspan="1">Position</th>
-                            <th rowspan="1" colspan="1">Office</th>
-                            <th class="dt-body-right" rowspan="1" colspan="1">Age</th>
-                            <th rowspan="1" colspan="1">Start date</th>
+                            <th rowspan="1" colspan="1">HTML Link</th>
+                            <th rowspan="1" colspan="1">PDF Link</th>
                             <th class="dt-body-right" rowspan="1" colspan="1">Salary</th>
                         </tr>
                     </tfoot>
 
                     <tbody>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1">Airi Satou</td>
-                            <td>Accountant</td><td>Tokyo</td>
-                            <td class=" dt-body-right">33</td>
-                            <td>2008/11/28</td><td class=" dt-body-right">$162,700</td>
+                        {% for result in json.results %}
+                        <tr role="row" class="{% cycle 'odd' 'even' %}">
+                            <td class="sorting_1">{{ result.title|truncatechars:30 }}</td>
+                            <td><a href="{{ result.html_url }}" target="_blank">HTML</a></td>
+                            <td><a href="{{ result.pdf_url }}" target="_blank">PDF</a></td>
+                            <td class=" dt-body-right">{{ result.publication_date }}</td>
+                        {% endfor %}
                         </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1">Angelica Ramos</td>
-                            <td>Chief Executive Officer (CEO)</td>
-                            <td>London</td>
-                            <td class=" dt-body-right">47</td>
-                            <td>2009/10/09</td>
-                            <td class=" dt-body-right">$1,200,000</td>
-                        </tr>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1">Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td class=" dt-body-right">66</td>
-                            <td>2009/01/12</td><td class=" dt-body-right">$86,000</td>
-                        </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1">Bradley Greer</td>
-                            <td>Software Engineer</td>
-                            <td>London</td>
-                            <td class=" dt-body-right">41</td>
-                            <td>2012/10/13</td>
-                            <td class=" dt-body-right">$132,000</td>
-                        </tr>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1">Brenden Wagner</td>
-                            <td>Software Engineer</td>
-                            <td>San Francisco</td>
-                            <td class=" dt-body-right">28</td>
-                            <td>2011/06/07</td>
-                            <td class=" dt-body-right">$206,850</td>
-                        </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1">Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td class=" dt-body-right">61</td>
-                            <td>2012/12/02</td>
-                            <td class=" dt-body-right">$372,000</td>
-                        </tr>
-                         <tr role="row" class="even">
-                            <td class="sorting_1">Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td class=" dt-body-right">61</td>
-                            <td>2012/12/02</td>
-                            <td class=" dt-body-right">$372,000</td>
-                        </tr>
-                         <tr role="row" class="even">
-                            <td class="sorting_1">Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td class=" dt-body-right">61</td>
-                            <td>2012/12/02</td>
-                            <td class=" dt-body-right">$372,000</td>
-                        </tr>
-                         <tr role="row" class="even">
-                            <td class="sorting_1">Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td class=" dt-body-right">61</td>
-                            <td>2012/12/02</td>
-                            <td class=" dt-body-right">$372,000</td>
-                        </tr>
-                         <tr role="row" class="even">
-                            <td class="sorting_1">Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td class=" dt-body-right">61</td>
-                            <td>2012/12/02</td>
-                            <td class=" dt-body-right">$372,000</td>
-                        </tr>
-                         <tr role="row" class="even">
-                            <td class="sorting_1">Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td class=" dt-body-right">61</td>
-                            <td>2012/12/02</td>
-                            <td class=" dt-body-right">$372,000</td>
-                        </tr>
-                         <tr role="row" class="even">
-                            <td class="sorting_1">Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td class=" dt-body-right">61</td>
-                            <td>2012/12/02</td>
-                            <td class=" dt-body-right">$372,000</td>
-                        </tr>
-                         <tr role="row" class="even">
-                            <td class="sorting_1">Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td class=" dt-body-right">61</td>
-                            <td>2012/12/02</td>
-                            <td class=" dt-body-right">$372,000</td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
@@ -250,7 +150,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Your Website 2014</p>
+            <p>Copyright &copy; FR4LGBTQ 2015</p>
         </div>
     </footer>
 
