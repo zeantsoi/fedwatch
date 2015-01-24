@@ -1,0 +1,40 @@
+/*!
+ * Element
+ */
+
+body, .intro-body {
+	background-color: lightblue;	
+}
+
+table td{
+	color: black;
+}
+
+#search{
+	padding: 0;
+}
+
+.main-search{
+	display: block;
+	text-align: left;
+	margin: 0 auto;
+	width: 500px;
+	border: none;
+	padding: 5px 10px;
+}
+
+
+
+
+/*!
+ * Responsive
+ */
+
+@media (min-width: 767px){
+	.intro .intro-body .brand-heading {
+		font-size: 30px;
+	}
+	.intro .intro-body .intro-text {
+		font-size: 18px;
+	}
+}
