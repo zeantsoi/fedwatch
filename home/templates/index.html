@@ -180,12 +180,12 @@
                     <tbody>
                         <tr role="row" class="odd">
                             <td class="sorting_1">New Keyword</td>
-                            <td><a href="/api/keywords" target="_blank">Add</a></td>
+                            <td><a href="/api/keywords">Add</a></td>
                         </tr>
                         {% for keyword in keywords %}
                         <tr role="row" class="{% cycle 'even' 'odd' %}">
                             <td class="sorting_1">{{ keyword.keyword }}</td>
-                            <td><a href="/api/keywords/{{ keyword.id }}" target="_blank">Update</a></td>
+                            <td><a href="/api/keywords/{{ keyword.id }}">Update</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
