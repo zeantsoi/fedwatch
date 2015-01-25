@@ -26,7 +26,14 @@
 	.f22	{ font-size: 22px !important; }
 	.f26	{ font-size: 26px !important; }
 
-
+	.txt-red { color: red; }
+	.txt-orange { color: orange; }
+	.txt-yellow { color: yellow; }
+	.txt-green { color: green; }
+	.txt-blue { color: blue; }
+	.txt-purple { color: purple; }
+	.txt-pink { color: pink; }
+	
 // - - Opacity - -
 
 	.o1 	{ opacity: .1 !important; }

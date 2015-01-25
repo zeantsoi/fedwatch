@@ -23,7 +23,16 @@ table td{
 	padding: 5px 10px;
 }
 
-
+.rainbow-bar{
+	background: url(../img/rainbow-bar.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	position: fixed;
+	top: 0px;
+	height: 3px;
+	width: 100%;
+}
 
 
 /*!

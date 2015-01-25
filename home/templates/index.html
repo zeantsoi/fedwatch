@@ -53,10 +53,10 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-search"></i>  <span class="light">FR4LGBTQ</span>
+                    <i class="fa fa-search"></i>  
+                    <span class="light">FR4<span class="txt-red">L</span><span class="txt-green">G</span><span class="txt-blue">B</span><span class="txt-purple">T</span><span class="txt-yellow">Q</span></span>
                 </a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
@@ -65,7 +65,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll login" onClick="facebookLogin()">Login</a>
+                        <a class="page-scroll login" onClick="fbLogin()">Login</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#search">Search</a>
@@ -78,6 +78,7 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
+        <div class="rainbow-bar"></div>
     </nav>
 
     <!-- Intro Header -->
@@ -95,20 +96,27 @@
                             data-width="450"
                             data-show-faces="true">
                         </div>
-                    <a href="#search" class="btn btn-circle page-scroll">
-                        <i class="fa fa-angle-double-down animated"></i>
-                    </a>
-
-                </div>
+                        <a href="#search" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                        <!-- <p class='f14 o6'>created at #hackdance for the lgbtq team</p> -->
+    
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
+
+
     <!-- About Section -->
     <section id="search" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
+                <br /><br /><br />
+                <h2 class="brand-heading"><i class="fa fa-search"></i>Search Results</h2>
+                <p class="intro-text mar0">Searching all articles between {{ start_date }} to {{ end_date }}.</p>
+                <br /><br /><br />
                 <table id="example" class="display nowrap dataTable dtr-inline" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%;">
                     <thead>
                         <tr role="row">
@@ -141,6 +149,45 @@
                             <td class=" dt-body-right">{{ result.publication_date }}</td>
                         {% endfor %}
                         </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keywords Section -->
+    <section id="keywords" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="brand-heading"><i class="fa fa-search"></i>Keywords</h2>
+                <table id="example" class="display nowrap dataTable dtr-inline" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%;">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 115px;">
+                                Keyword</th>
+                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 192px;">
+                                Link</th>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                        <tr>
+                            <th rowspan="1" colspan="1">Keyword</th>
+                            <th rowspan="1" colspan="1">Link</th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody>
+                        <tr role="row" class="odd">
+                            <td class="sorting_1">New Keyword</td>
+                            <td><a href="/api/keyword" target="_blank">Add</a></td>
+                        </tr>
+                        {% for keyword in keywords %}
+                        <tr role="row" class="{% cycle 'even' 'odd' %}">
+                            <td class="sorting_1">{{ keyword.keyword }}</td>
+                            <td><a href="/api/keyword/{{ keyword.id }}" target="_blank">Update</a></td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
