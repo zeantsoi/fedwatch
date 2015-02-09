@@ -1,35 +1,38 @@
-# python-getting-started
+# FedWatch API
 
-A barebones Python app, which can easily be deployed to Heroku.
+A barebones Django app and API for searching the [Federal Register](https://www.federalregister.gov/articles/search).
 
 This application support the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
 
-## Running Locally
+## Basic Features
 
-Make sure you have Python [installed properly](http://install.python-guide.org).  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
+### API
 
-```sh
-$ git clone git@github.com:heroku/python-getting-started.git
-$ cd python-getting-started
-$ pip install -r requirements.txt
-$ python manage.py syncdb
-$ foreman start web
-```
+The API is built on Django using [Django REST framework](http://www.django-rest-framework.org/). The current API is fully consumable, without authentication, by any client at the following endpoints:
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+- `/api/keywords` [LIST, POST]
+- `/api/keywords/<keyword_id>` [GET, PUT, DELETE]
 
-## Deploying to Heroku
+### Application
 
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku run python manage.py syncdb
-$ heroku open
-```
+The web application is a single-page app built upon a Django template. It RESTfully consumes from the API.
 
-## Documentation
+The app currently makes requests directly against the Federal Register upon each load of the front page; *no responses are persisted to database*. The only data currently being persisted are keywords that are posted directly to the API.
 
-For more information about using Python on Heroku, see these Dev Center articles:
+### Deployment
 
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
+The app is currently deployed for production on [Heroku](https://heroku.com) at [http://fedwatch.herokuapp.com](http://fedwatch.herokuapp.com). Please contact [zeantsoi](https://github.com/zeantsoi) for details on accessing the Heroku account.
 
+## Next steps
+
+There are a lot of possibilities for where this API can next be taken. Here are just a few:
+
+- Authenticated requests
+- Date ranges
+- Persist responses to database
+- Cron job to periodically query against Federal Register
+- Updated/new apps, including desktop/mobile clients
+
+## Attribution
+
+This code was written by [@johnDANGRstorey](https://twitter.com/johndangrstorey), [@eklect](https://twitter.com/eklect), and [@zeantsoi](https://twitter.com/zeantsoi) for [Hackdance 2015](http://hackdance2015.splashthat.com/). All rights to license and use are granted to the organization for which this project was created.
