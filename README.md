@@ -36,3 +36,7 @@ There are a lot of possibilities for where this API can next be taken. Here are 
 ## Attribution
 
 This code was written by [@johnDANGRstorey](https://twitter.com/johndangrstorey), [@eklect](https://twitter.com/eklect), and [@zeantsoi](https://twitter.com/zeantsoi) for [Hackdance 2015](http://hackdance2015.splashthat.com/). All rights to license and use are granted to the organization for which this project was created.
+
+### Transfer of ownership
+
+Please contact [zeantsoi](https://github.com/zeantsoi) to transfer ownership of this repository to a new party.
