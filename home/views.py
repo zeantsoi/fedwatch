@@ -15,7 +15,7 @@ def index(request):
     keywords = Keyword.objects.all()
     keywords_list = []
     for keyword in keywords:
-        keywords_list.append(keyword.keyword)
+        keywords_list.append('"' + keyword.keyword + '"')
 
     keywords_str = ('|').join(keywords_list)
 
