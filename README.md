@@ -17,7 +17,7 @@ The API is built on Django using [Django REST framework](http://www.django-rest-
 
 The web application is a single-page app built upon a Django template. It RESTfully consumes from the API.
 
-The app currently makes requests directly against the Federal Register upon each load of the front page; *no responses are persisted to database*. The only data currently being persisted are keywords that are posted directly to the API.
+The app currently makes requests directly against the Federal Register upon each load of the front page; **no responses are persisted to database**. The only data currently being persisted are keywords that are posted directly to the API.
 
 ### Deployment
 
